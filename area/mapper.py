@@ -12,7 +12,6 @@ def main():
         words = line.split(",")
         
 	country = words[0]
-
-        print '%s\t%s' % (country)
-
+	feature = words[3]
+        print '%s\t%s' % (country, feature)
 main()
