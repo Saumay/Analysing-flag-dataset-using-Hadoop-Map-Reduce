@@ -18,9 +18,9 @@ def choice(population, weights):
     idx = bisect.bisect(cdf_vals, x)
     return population[idx]
 
-weights=[0.2, 0.4, 0.1,0.3]
+weights=[0.2, 0.4, 0.1,0.2,0.1]
 
-population = 'ABCD'
+population = 'ABCDe'
 counts = collections.defaultdict(int)
 for i in range(10000):
     print(choice(population, weights))
