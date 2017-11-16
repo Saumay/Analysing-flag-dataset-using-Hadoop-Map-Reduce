@@ -11,6 +11,47 @@ from matplotlib.widgets import Slider
 
 features = []
 countries = []
+
+centeroids = []
+centeroids_countries = []
+
+##WEIGHTED  SAMPLING
+def cdf(weights):
+	total = sum(weights)
+	result = []
+	cumsum = 0
+	for w in weights:
+		cumsum += w
+		result.append(cumsum / total)
+	#print(cumsum,total)
+	return result
+
+def choice(population, weights):
+	assert len(population) == len(weights)
+	cdf_vals = cdf(weights)
+	x = random.random()
+	idx = bisect.bisect(cdf_vals, x)
+	#print(population[idx])
+	return population[idx]
+
+def weighted_sampling(weights, population):
+	#weights=[0.1, 0.8, 0.1]
+	#population = 'ABC'
+	counts = collections.defaultdict(int)
+	#print(choice(population, weights))
+	return choice(population, weights)
+	#print(counts)
+	"""testing
+	for i in range(100):
+		print(choice(population, weights))
+		counts[choice(population, weights)] += 1
+	"""#
+
+##RANDOM SAMPLING
+def random_sampling(population):
+	n = random.sample(features, 1)
+	return n[0]
+
 def compute_centeroids(k):
 	weights = []
 	c1 = random_sampling(features)
@@ -57,5 +98,18 @@ def MAIN():
 			#print '%s,%s' % (current_country, current_feature)
 			features.append(int(current_feature))
 			countries.append(current_country)
+	
+
+		#print '%d' % (features_sum)  
+		k=5
+
+		compute_centeroids(k)
+		#print(centeroids)
+		#print(centeroids_countries)
+
+		#sort_countries_centeroids(centeroids, centeroids_countries)
+
+		print "Centeroids:",centeroids
+		print "Countries corresponding to centeroids:",centeroids_countries
 
 MAIN()
