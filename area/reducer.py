@@ -32,6 +32,10 @@ def sort_countries_centeroids(A,B):
 			if ( A[k] < A[k - 1] ):
 				swap( A, k, k - 1 )
 				swap( B, k, k - 1)
+def swap( A, x, y ):
+	tmp = A[x]
+	A[x] = A[y]
+	A[y] = tmp
 
 def choice(population, weights):
 	assert len(population) == len(weights)
