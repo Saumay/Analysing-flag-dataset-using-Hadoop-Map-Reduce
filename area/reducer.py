@@ -9,6 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 
+current_word = None
+current_feature = None
+#features = [1,2,3,6,7,8]
 features = []
 countries = []
 
@@ -20,7 +23,8 @@ clusters_countries = [[]]
 
 sum_of_squared_error = []
 
-labels = ["A","B","C","D","E"]
+labels = ["Very Small Countries","Small Countries","Average Sized Countries","Large Countries","Very Large Countries"]
+
 
 ##WEIGHTED  SAMPLING
 def cdf(weights):
@@ -32,17 +36,6 @@ def cdf(weights):
 		result.append(cumsum / total)
 	#print(cumsum,total)
 	return result
-
-def sort_countries_centeroids(A,B):
-	for i in range( len( A ) ):
-		for k in range( len( A ) - 1, i, -1 ):
-			if ( A[k] < A[k - 1] ):
-				swap( A, k, k - 1 )
-				swap( B, k, k - 1)
-def swap( A, x, y ):
-	tmp = A[x]
-	A[x] = A[y]
-	A[y] = tmp
 
 def choice(population, weights):
 	assert len(population) == len(weights)
@@ -70,6 +63,8 @@ def random_sampling(population):
 	n = random.sample(features, 1)
 	return n[0]
 
+
+##CALCULATING CENTRES OF CENTEROIDS
 def compute_centeroids(k):
 	weights = []
 	c1 = random_sampling(features)
@@ -158,6 +153,45 @@ def k_means(k):
 
 	sum_of_squared_error.append(sum_errors)
 
+
+	#print(count)
+		
+def sort_countries_centeroids(A,B):
+	for i in range( len( A ) ):
+		for k in range( len( A ) - 1, i, -1 ):
+			if ( A[k] < A[k - 1] ):
+				swap( A, k, k - 1 )
+				swap( B, k, k - 1)
+
+def swap( A, x, y ):
+	tmp = A[x]
+	A[x] = A[y]
+	A[y] = tmp
+
+def update(val):
+	pos = spos.val
+	ax.axis([pos,pos+10,-1,1])
+	fig.canvas.draw_idle()
+
+def draw_graph(cluster):
+	fig, ax = plt.subplots()
+	plt.subplots_adjust(bottom=0.25)
+
+	#t = np.arange(0.0, 100.0, 0.1)
+	t = cluster
+	#s = np.sin(2*np.pi*t)
+	s = np.zeros_like(t)
+
+	l, = plt.plot(t,s,'.')
+	plt.axis([0, 1000, -1, 2])
+
+	axcolor = 'lightgoldenrodyellow'
+	axpos = plt.axes([0.2, 0.1, 0.65, 0.03], axisbg=axcolor)
+
+	spos = Slider(axpos, 'Pos', 0.1, 90.0)
+	spos.on_changed(update)
+
+
 def MAIN():
 	# input comes from STDIN
 		for line in sys.stdin:
@@ -170,7 +204,7 @@ def MAIN():
 			#print '%s,%s' % (current_country, current_feature)
 			features.append(int(current_feature))
 			countries.append(current_country)
-	
+
 
 		#print '%d' % (features_sum)  
 		k=5
@@ -180,10 +214,10 @@ def MAIN():
 		#print(centeroids_countries)
 
 		sort_countries_centeroids(centeroids, centeroids_countries)
-
+		
 		print "Centeroids:",centeroids
 		print "Countries corresponding to centeroids:",centeroids_countries
-
+		
 		########################################################
 		plt.plot(features, np.zeros_like(features), '.')
 		plt.show()
