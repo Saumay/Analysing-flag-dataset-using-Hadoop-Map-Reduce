@@ -11,7 +11,7 @@ from matplotlib.widgets import Slider
 
 current_word = None
 current_feature = None
-#features = [1,2,3,6,7,8]
+
 features = []
 countries = []
 
@@ -51,12 +51,6 @@ def weighted_sampling(weights, population):
 	counts = collections.defaultdict(int)
 	#print(choice(population, weights))
 	return choice(population, weights)
-	#print(counts)
-	"""testing
-	for i in range(100):
-		print(choice(population, weights))
-		counts[choice(population, weights)] += 1
-	"""#
 
 ##RANDOM SAMPLING
 def random_sampling(population):
@@ -114,9 +108,6 @@ def k_means(k):
 			clusters.pop(0)
 			clusters_countries.pop(0)
 
-		#print(len(clusters))
-		#print(clusters_countries)
-
 		count = 0		
 
 		for i in range(len(features)):
@@ -134,11 +125,6 @@ def k_means(k):
 			sum_errors += min(dist_list)
 
 			centeroids[min_dist_index] = sum(clusters[min_dist_index])/len(clusters[min_dist_index])
-			#print(dist_list)
-		#print(clusters)
-		#print()
-		#print(clusters_countries)
-		#print()
 
 		if(clusters==clusters_prev):
 			#print(count)
@@ -148,12 +134,8 @@ def k_means(k):
 		for i in range(k):
 			clusters.pop()
 			clusters_countries.pop()
-
 		count += 1
-
 	sum_of_squared_error.append(sum_errors)
-
-
 	#print(count)
 		
 def sort_countries_centeroids(A,B):
@@ -191,7 +173,6 @@ def draw_graph(cluster):
 	spos = Slider(axpos, 'Pos', 0.1, 90.0)
 	spos.on_changed(update)
 
-
 def MAIN():
 	# input comes from STDIN
 		for line in sys.stdin:
@@ -205,25 +186,23 @@ def MAIN():
 			features.append(int(current_feature))
 			countries.append(current_country)
 
-
 		#print '%d' % (features_sum)  
 		k=5
-
 		compute_centeroids(k)
 		#print(centeroids)
 		#print(centeroids_countries)
-
 		sort_countries_centeroids(centeroids, centeroids_countries)
-		
+
 		print "Centeroids:",centeroids
 		print "Countries corresponding to centeroids:",centeroids_countries
-		
+
 		########################################################
 		plt.plot(features, np.zeros_like(features), '.')
 		plt.show()
 		########################################################
 
 		k_means(k)
+
 		count = 0
 		print("\n")
 		for i in range(k):
