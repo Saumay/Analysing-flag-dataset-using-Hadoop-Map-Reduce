@@ -185,8 +185,8 @@ def MAIN():
 		print "Countries corresponding to centeroids:",centeroids_countries
 
 		########################################################
-		#plt.plot(features, np.zeros_like(features), '.')
-		#plt.show()
+		plt.plot(features, np.zeros_like(features), '.')
+		plt.show()
 		########################################################
 
 		k_means(k)
@@ -194,14 +194,14 @@ def MAIN():
 		print("\n")
 		for i in range(k):
 			print "%s:" % (labels[i%5])
-			#plt.plot(clusters[i], np.zeros_like(clusters[i]), '.')
+			plt.plot(clusters[i], np.zeros_like(clusters[i]), '.')
 			#draw_graph(clusters[i])
 			for j in range(1, len(clusters[i])):
 				print '%s,%d' % (clusters_countries[i][j],clusters[i][j])
 				count += 1
 			print("\n")
 		print 'Total Countries = %d' % (count)
-		#plt.show()
+		plt.show()
 
 		print(sum_of_squared_error)
 
