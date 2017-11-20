@@ -14,17 +14,9 @@ current_feature = None
 features = []
 countries = []
 
-centeroids = []
-centeroids_countries = []
-
-clusters = [[]]
-clusters_countries = [[]]
-
 sum_of_squared_error = []
 
-
 labels = ["Very Small Countries","Small Countries","Average Sized Countries","Large Countries","Very Large Countries"]
-
 
 ##WEIGHTED  SAMPLING
 def cdf(weights):
@@ -210,8 +202,6 @@ def MAIN():
 				print '\nCluster %d:' % (i)
 				print clusters[i]
 				val = 0
-				#plt.plot(clusters[i], np.zeros_like(clusters[i]), '.')
-				#plt.scatter(clusters[], np.zeros_like(clusters[7]))
 				for j in range(1, len(clusters[i])):
 					#print '%s,%d' % (clusters_countries[i][j],clusters[i][j])
 					count += 1
