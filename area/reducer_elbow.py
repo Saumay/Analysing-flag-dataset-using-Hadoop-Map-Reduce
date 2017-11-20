@@ -187,7 +187,7 @@ def MAIN():
 
 
 		#print '%d' % (features_sum)  
-		for k in range(2,5):
+		for k in range(2,9):
 			centeroids = []
 			centeroids_countries = []
 
