@@ -8,7 +8,7 @@ def cdf(weights):
     cumsum = 0
     for w in weights:
         cumsum += w
-        result.append(cumsum * total)
+        result.append(cumsum / total)
     #print(cumsum,total)
     return result
 
