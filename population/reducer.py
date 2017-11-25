@@ -7,7 +7,10 @@ import bisect
 import collections  
 import numpy as np
 import matplotlib.pyplot as plt
-		
+
+features = []
+countries = []
+
 def MAIN():
 	# input comes from STDIN
 		for line in sys.stdin:
@@ -18,5 +21,7 @@ def MAIN():
 			current_country = words[0]
 			current_feature = words[1]
 			print '%s,%s' % (current_country, current_feature)
+			features.append(int(current_feature))
+			countries.append(current_country)
 
 MAIN()
