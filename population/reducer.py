@@ -56,7 +56,7 @@ def compute_centeroids(k):
 	centeroids_countries.append(country1)
 	for i in range(0,k-1):
 		for j in range(0,len(features)):
-			small = max(features)
+			small = max(features)	
 			for l in range(0,len(centeroids)):
 				di = pow((int(features[j]) - centeroids[l]),2)
 				#print 'di=%d'%(di)
@@ -94,7 +94,7 @@ def MAIN():
 			countries.append(current_country)
 		
 		#print '%d' % (features_sum)  
-		k=5
+		k=2
 
 		compute_centeroids(k)
 
