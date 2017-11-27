@@ -94,7 +94,7 @@ def MAIN():
 			countries.append(current_country)
 		
 		#print '%d' % (features_sum)  
-		k=2
+		k=7
 
 		compute_centeroids(k)
 
