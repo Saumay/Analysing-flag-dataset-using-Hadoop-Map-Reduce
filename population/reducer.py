@@ -45,6 +45,11 @@ def weighted_sampling(weights, population):
 		counts[choice(population, weights)] += 1
 	"""
 
+##RANDOM SAMPLING
+def random_sampling(population):
+	n = random.sample(features, 1)
+	return n[0]
+
 ##CALCULATING CENTRES OF CENTEROIDS
 def compute_centeroids(k):
 	weights = []
