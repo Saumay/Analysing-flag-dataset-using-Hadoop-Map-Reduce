@@ -85,12 +85,11 @@ def compute_centeroids(k):
 		#print '%d:%s' % (cn,countryn)  
 	print("\n")     
 
-		
 def sort_countries_centeroids(A,B):
-	for i in range( len( A ) ):
-		for k in range( len( A ) - 1, i, -1 ):
+	for i in range(len(A)):
+		for k in range(len(A)-1, i, -1 ):
 			if ( A[k] < A[k - 1] ):
-				swap( A, k, k - 1 )#
+				swap( A, k, k - 1 )
 				swap( B, k, k - 1)
 
 def MAIN():
