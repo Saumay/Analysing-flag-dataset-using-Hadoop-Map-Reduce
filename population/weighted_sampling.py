@@ -20,10 +20,10 @@ def choice(population, weights):
     #print(population[idx])
     return population[idx]
 
-weights=[0.1, 0.8, 0.1]
+weights=[0.1, 0.1, 0.1]
 population = 'ABC'
 counts = collections.defaultdict(int)
-for i in range(100):
+for i in range(10000):
     print(choice(population, weights))
     counts[choice(population, weights)] += 1
 
