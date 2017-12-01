@@ -113,5 +113,7 @@ def MAIN():
 		
 		print "Centeroids:",centeroids
 		print "Countries corresponding to centeroids:",centeroids_countries
+		
+		plt.plot(features, np.zeros_like(features), '.')
 
 MAIN()
