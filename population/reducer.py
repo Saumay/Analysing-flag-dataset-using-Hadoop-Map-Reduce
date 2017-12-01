@@ -85,6 +85,59 @@ def compute_centeroids(k):
 		#print '%d:%s' % (cn,countryn)  
 	print("\n")     
 
+def k_means(k):
+
+	clusters_prev=[[]]
+	while(1):
+		sum_errors = 0
+
+		for i in range(0,len(centeroids)):
+			clusters.append([centeroids[i]])
+			clusters_countries.append([centeroids_countries[i]])
+		#print(clusters)
+		#print(clusters_countries)
+
+		if(len(clusters)==k+1):
+			clusters.pop(0)
+			clusters_countries.pop(0)
+
+		#print(len(clusters))
+		#print(clusters_countries)
+
+		count = 0		
+
+		for i in range(len(features)):
+			dist_list = []
+			for j in range(len(centeroids)):
+				dist = pow(features[i]-centeroids[j],2)
+				dist_list.append(dist)
+
+			min_dist_index = dist_list.index(min(dist_list))
+			clusters[min_dist_index].append(features[i])
+			clusters_countries[min_dist_index].append(countries[i])
+
+			sum_errors += min(dist_list)
+
+			centeroids[min_dist_index] = sum(clusters[min_dist_index])/len(clusters[min_dist_index])
+			#print(dist_list)
+		#print(clusters)
+		#print()
+		#print(clusters_countries)
+		#print()
+
+		if(clusters==clusters_prev):
+			#print(count)
+			break
+		clusters_prev = clusters
+
+		for i in range(k):
+			clusters.pop()
+			clusters_countries.pop()
+
+		count += 1
+
+	sum_of_squared_error.append(sum_errors)
+
 def sort_countries_centeroids(A,B):
 	for i in range(len(A)):
 		for k in range(len(A)-1, i, -1 ):
@@ -115,5 +168,13 @@ def MAIN():
 		print "Countries corresponding to centeroids:",centeroids_countries
 		
 		plt.plot(features, np.zeros_like(features), '.')
+
+		k_means(k)
+		count = 0
+		
+		print("\n")
+		for row in clusters:
+    			del row[0]
+		print(clusters)
 
 MAIN()
