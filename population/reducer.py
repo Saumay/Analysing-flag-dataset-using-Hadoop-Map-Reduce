@@ -8,12 +8,23 @@ import collections
 import numpy as np
 import matplotlib.pyplot as plt
 
+current_word = None
+current_feature = None
+#features = [1,2,3,6,7,8]
 features = []
 countries = []
 
 centeroids = []
 centeroids_countries = []
 
+clusters = [[]]
+clusters_countries = [[]]
+
+sum_of_squared_error = []
+
+labels = ['A', 'B', 'C', 'D', 'E']
+
+##WEIGHTED  SAMPLING
 def cdf(weights):
 	total = sum(weights)
 	result = []
@@ -50,6 +61,7 @@ def random_sampling(population):
 	n = random.sample(features, 1)
 	return n[0]
 
+
 ##CALCULATING CENTRES OF CENTEROIDS
 def compute_centeroids(k):
 	weights = []
@@ -61,7 +73,7 @@ def compute_centeroids(k):
 	centeroids_countries.append(country1)
 	for i in range(0,k-1):
 		for j in range(0,len(features)):
-			small = max(features)	
+			small = max(features)
 			for l in range(0,len(centeroids)):
 				di = pow((int(features[j]) - centeroids[l]),2)
 				#print 'di=%d'%(di)
@@ -138,12 +150,25 @@ def k_means(k):
 
 	sum_of_squared_error.append(sum_errors)
 
+
+	#print(count)
+		
 def sort_countries_centeroids(A,B):
-	for i in range(len(A)):
-		for k in range(len(A)-1, i, -1 ):
+	for i in range( len( A ) ):
+		for k in range( len( A ) - 1, i, -1 ):
 			if ( A[k] < A[k - 1] ):
-				swap( A, k, k - 1 )
+				swap( A, k, k - 1 )#
 				swap( B, k, k - 1)
+
+def swap( A, x, y ):
+	tmp = A[x]
+	A[x] = A[y]
+	A[y] = tmp
+
+def update(val):
+	pos = spos.val
+	ax.axis([pos,pos+10,-1,1])
+	fig.canvas.draw_idle()
 
 def MAIN():
 	# input comes from STDIN
@@ -154,14 +179,18 @@ def MAIN():
 			# parse the input we got from mapper.py
 			current_country = words[0]
 			current_feature = words[1]
-			print '%s,%s' % (current_country, current_feature)
+			#print '%s,%s' % (current_country, current_feature)
 			features.append(int(current_feature))
 			countries.append(current_country)
-		
+
+
 		#print '%d' % (features_sum)  
-		k=7
+		k=5
 
 		compute_centeroids(k)
+		#print(centeroids)
+		#print(centeroids_countries)
+
 		sort_countries_centeroids(centeroids, centeroids_countries)
 		
 		print "Centeroids:",centeroids
@@ -176,5 +205,16 @@ def MAIN():
 		for row in clusters:
     			del row[0]
 		print(clusters)
+		for i in range(k):
+			print "%s:" % (labels[i%5])
+			plt.plot(clusters[i], np.zeros_like(clusters[i]), '.')
+			for j in range(1, len(clusters[i])):
+				print '%s,%d' % (clusters_countries[i][j],clusters[i][j])
+				count += 1
+			print("\n")
+		print 'Total Countries = %d' % (count)
+		plt.show()
+
+		print(sum_of_squared_error)
 
 MAIN()
