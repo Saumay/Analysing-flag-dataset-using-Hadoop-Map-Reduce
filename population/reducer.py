@@ -22,7 +22,7 @@ clusters_countries = [[]]
 
 sum_of_squared_error = []
 
-labels = ['A', 'B', 'C', 'D', 'E']
+labels = ['A', 'B', 'C', 'D', 'E','F','G']
 
 ##WEIGHTED  SAMPLING
 def cdf(weights):
@@ -185,7 +185,7 @@ def MAIN():
 
 
 		#print '%d' % (features_sum)  
-		k=5
+		k=7
 
 		compute_centeroids(k)
 		#print(centeroids)
