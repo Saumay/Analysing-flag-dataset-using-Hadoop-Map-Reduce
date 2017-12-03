@@ -22,7 +22,8 @@ clusters_countries = [[]]
 
 sum_of_squared_error = []
 
-labels = ['A', 'B', 'C', 'D', 'E','F','G']
+labels = ["Very Scarcely populated Countries","Scarcely populated Countries","Averagely Populated Countries","Densily Populated Countries","Very Densily Countries"]
+
 
 ##WEIGHTED  SAMPLING
 def cdf(weights):
@@ -185,7 +186,7 @@ def MAIN():
 
 
 		#print '%d' % (features_sum)  
-		k=7
+		k=5
 
 		compute_centeroids(k)
 		#print(centeroids)
