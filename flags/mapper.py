@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 #for landmass
-
 import sys
 # input comes from STDIN (standard input)
 
