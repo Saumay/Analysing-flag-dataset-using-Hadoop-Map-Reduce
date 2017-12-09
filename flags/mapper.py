@@ -24,6 +24,5 @@ def main():
 	current_feature11 = words[25]		#icon
 	current_feature12 = words[26]		#animate
 	current_feature13 = words[27]		#text
-
         print '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s' % (current_country, current_feature1, current_feature2, current_feature3, current_feature4, current_feature5, current_feature6, current_feature7, current_feature8, current_feature9, current_feature10, current_feature11, current_feature11, current_feature13)
 main()
