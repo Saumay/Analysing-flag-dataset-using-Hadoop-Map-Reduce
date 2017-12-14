@@ -1,6 +1,5 @@
 import os
 import sys
-
 flags_list = ""
 for line in sys.stdin:
 	# remove leading and trailing whitespace
