@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600mm"
+   height="1200mm"
+   viewBox="0 0 600 1200"
+   version="1.1"
+   id="svg6745"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="Flag of the Soviet Union (vertical).svg">
+  <defs
+     id="defs6739" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="625.0885"
+     inkscape:cy="1699.5933"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g7295"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6742">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,903)">
+    <g
+       id="g7295"
+       transform="matrix(0.26458333,0,0,0.26458333,228.25628,-199.31546)">
+      <path
+         inkscape:connector-curvature="0"
+         style="fill:#cc0000;fill-opacity:1;stroke-width:3.77952766"
+         id="path2"
+         d="M -862.70096,-2659.5951 V 1875.838 H 1405.0156 v -4535.4331 z" />
+      <g
+         id="g6713"
+         transform="matrix(3.7795276,0,0,3.7795276,-1034.9172,-2487.3787)">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 191.6,61.4 h -27 l 21.8,16 -8.2,25.6 21.8,-15.8 21.8,15.8 -8.2,-25.6 21.8,-16 h -27 L 200,35.6 Z m 8.4,-9.8 4.8,14.8 h 15.4 l -12.4,9 4.72,14.7 L 200,81 l -12.52,9.1 4.72,-14.7 -12.4,-9 h 15.4 z"
+           id="path4"
+           style="fill:#ffd700;fill-opacity:1" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 166.577,138.645 -33.986,32.37 18.126,18.126 15.651,-15.756 c 30.522,30.98 54.246,55.066 83.72,84.978 8.159,8.46 22.368,-3.044 13.268,-12.812 -31.14,-30.347 -52.722,-52.25 -85.165,-84.067 l 19.235,-19.348 z"
+           id="path6"
+           style="fill:#ffd700;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 165.43,229.454 c 60.803,56.406 159.333,-45.304 33.413,-119.013 93.707,104.11 3.745,136.026 -28.829,103.909 l -1.64,-1.355 c -1.33,1.493 -2.663,2.984 -3.991,4.478 -2.524,-2.382 -6.444,-3.082 -7.65,0.991 -4.96,-0.343 -7.87,2.405 -9.167,7.553 -9.224,6.11 -19.21,11.472 -24.949,21.068 -3.28,10.15 3.208,14.564 10.547,13.724 12.031,-4.998 15.75,-15.801 22.188,-24.714 4.552,-1.449 8.407,-3.397 9.114,-7.54"
+           id="path8"
+           style="fill:#ffd700;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+      </g>
+    </g>
+  </g>
+</svg>
