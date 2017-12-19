@@ -3,6 +3,7 @@ import sys
 from os import listdir
 from os.path import isfile, join
 
+
 flags_list = ""
 for line in sys.stdin:
 	# remove leading and trailing whitespace
