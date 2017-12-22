@@ -247,6 +247,7 @@ def MAIN():
 
 		val = 0
 
+
 		for k in range(8,9):
 			for i in range(1,k):
 				folder = '/media/saumay/W Files2/PADHAI/WINTER SEM 3/Subjects/E2-Data Mining/Project/Clusters_of_flags/Cluster ' + str(i)
