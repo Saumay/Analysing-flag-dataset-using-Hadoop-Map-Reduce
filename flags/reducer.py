@@ -260,6 +260,7 @@ def MAIN():
 				    except Exception as e:
 				        print(e)
 
+
 			centeroids = []
 			centeroids_countries = []
 
