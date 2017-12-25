@@ -280,14 +280,7 @@ def MAIN():
 				print '\nCluster %d:' % (i+1)
 				#print clusters[i]
 				val = 0
-				"""
-				X = []
-				Y = []
-				for coordinate in range(1,len(clusters[i])):
-					X.append(clusters[i][coordinate][0])
-					Y.append(clusters[i][coordinate][1])
-				plt.plot(X, Y, '.')
-				"""
+
 				#plt.scatter(clusters[], np.zeros_like(clusters[7]))
 				for j in range(1, len(clusters[i])):
 					print clusters_countries[i][j],clusters[i][j]
