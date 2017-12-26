@@ -160,7 +160,6 @@ def k_means(centeroids, centeroids_countries, k):
 			#print(len(clusters_countries))
 
 			sum_errors += min(dist_list)
-
 			sum_0=sum_1=sum_2=sum_3=sum_4=sum_5=sum_6=sum_7=sum_8=sum_9=sum_10=sum_11=sum_12=sum_13=0
 			#centeroids[min_dist_index] = sum(clusters[min_dist_index])/len(clusters[min_dist_index])
 			ll = []
