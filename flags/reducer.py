@@ -209,6 +209,7 @@ def sort_countries_centeroids(A,B):
 				swap( A, k, k - 1 )
 				swap( B, k, k - 1)
 	return A,B
+
 def swap( A, x, y ):
 	tmp = A[x]
 	A[x] = A[y]
