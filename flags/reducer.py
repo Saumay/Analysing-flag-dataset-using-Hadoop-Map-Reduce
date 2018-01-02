@@ -280,6 +280,7 @@ def MAIN():
 				#print clusters[i]
 				val = 0
 
+
 				#plt.scatter(clusters[], np.zeros_like(clusters[7]))
 				for j in range(1, len(clusters[i])):
 					print clusters_countries[i][j],clusters[i][j]
