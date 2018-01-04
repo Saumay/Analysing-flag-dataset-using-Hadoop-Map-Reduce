@@ -298,4 +298,5 @@ def MAIN():
 				print("\n")
 			print 'Total Countries = %d' % (count)
 			print("Total error = "+str(sum_of_squared_error[0]))
+
 MAIN()
