@@ -298,12 +298,4 @@ def MAIN():
 				print("\n")
 			print 'Total Countries = %d' % (count)
 			print("Total error = "+str(sum_of_squared_error[0]))
-		"""
-		#plt.show()
-		print(sum_of_squared_error)
-		k_values = [x for x in range(2,15)]
-		print(len(sum_of_squared_error),len(k_values))
-		plt.plot(k_values, sum_of_squared_error)
-		plt.show()
-		"""
 MAIN()
