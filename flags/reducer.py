@@ -116,7 +116,6 @@ def compute_centeroids(centeroids, centeroids_countries, k):
 	print("\n")
 	return centeroids, centeroids_countries     
 
-
 def k_means(centeroids, centeroids_countries, k):
 	clusters = [[]]
 	clusters_countries = [[]]
