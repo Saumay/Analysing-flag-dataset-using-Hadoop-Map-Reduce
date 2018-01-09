@@ -179,13 +179,8 @@ def k_means(centeroids, centeroids_countries, k):
 				sum_11 = clusters[min_dist_index][i][7] + sum_11
 				sum_12 = clusters[min_dist_index][i][8] + sum_12
 				sum_13 = clusters[min_dist_index][i][9] + sum_13
-				"""
-				print(len(clusters[min_dist_index][0]))
-				sum_each = 0
-				for b in range(len(clusters[min_dist_index][0])):
-					sum_each += clusters[min_dist_index][i][b] + sum_each
-				ll.append(float(sum_each)/float(len(clusters[min_dist_index])))
-				"""
+(float(sum_each)/float(len(clusters[min_dist_index])))
+
 				clus_len = float(len(clusters[min_dist_index]))
 			centeroids[min_dist_index] = (float(sum_0)/clus_len , float(sum_1)/clus_len, float(sum_2)/clus_len, float(sum_3)/clus_len, float(sum_4)/clus_len, float(sum_5)/clus_len, float(sum_6)/clus_len, float(sum_7)/clus_len, float(sum_8)/clus_len, float(sum_9)/clus_len, float(sum_10)/clus_len, float(sum_11)/clus_len, float(sum_12)/clus_len, float(sum_13)/clus_len)
 			#centeroids[min_dist_index] = (float(sum_X)/float(len(clusters[min_dist_index])), float(sum_Y)/float(len(clusters[min_dist_index])))
