@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
+
 current_word = None
 current_feature = None
 
