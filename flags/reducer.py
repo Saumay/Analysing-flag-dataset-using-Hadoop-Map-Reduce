@@ -190,7 +190,6 @@ def k_means(centeroids, centeroids_countries, k):
 			break
 		clusters_prev = clusters
 
-
 		for i in range(k):
 			clusters.pop()
 			clusters_countries.pop()
